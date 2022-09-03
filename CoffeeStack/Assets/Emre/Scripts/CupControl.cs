@@ -12,10 +12,7 @@ public class CupControl : MonoBehaviour
     }
 
    
-    void Update()
-    {
-        
-    }
+    
     
     public void DynamicBonePos()
     {

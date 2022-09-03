@@ -3,25 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CupType 
+{
+    FirstCup,
+    SecondCup,
+    ThirdCup
+}
 public class Cup : MonoBehaviour
 {
+    [Header("CUP LID")]
+    public GameObject lid;
+    
+    [Header("CUP SLEEVE")]
+    public GameObject sleeve;
+    
+    [Header("SECOND CUP MESHES")]
+    public Mesh secondCupMesh;
+    public Mesh secondCupLidMesh;
+    public Mesh secondCupSleeveMesh;
+    
+    [Header("THIRD CUP MESHES")]
+    public Mesh thirdCupMesh;
+    public Mesh thirdCupLidMesh;
+    public Mesh thirdCupSleeveMesh;
+    
+    private bool isChanged = false;
+    
+    
     public bool isCollcet;
     public CupControl cupControl;
-    void Start()
-    {
-        
-    }
 
+    public CupType cupType;
   
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         Cup cup = other.GetComponent<Cup>();
         Obstacle obstacle = other.GetComponent<Obstacle>();
+        Gate gate = other.GetComponent<Gate>();
         
         if (cup&&!cup.isCollcet)
         {
@@ -39,7 +57,59 @@ public class Cup : MonoBehaviour
             StartCoroutine(obstacle.TakeCoffee());
             cupControl.DynamicBonePos();
         }
+
+        if (gate)
+        {
+            ChangeCup();
+            isChanged = false;
+        }
     }
 
-   
+    public void ChangeCup()
+    {
+        if (this.cupType == CupType.FirstCup && !isChanged)
+        {
+            isChanged = true;
+            this.cupType = CupType.SecondCup;
+            SecondCup();
+            gameObject.GetComponent<MeshRenderer>().material.color=Color.blue;
+        }
+        
+
+        if (this.cupType == CupType.SecondCup && !isChanged)
+        {
+            isChanged = true;
+            this.cupType = CupType.ThirdCup;
+            ThirdCup();
+            gameObject.GetComponent<MeshRenderer>().material.color=Color.green;
+            
+        }
+
+        if (this.cupType == CupType.ThirdCup && !isChanged)
+        {
+            isChanged = true;
+            this.cupType = CupType.ThirdCup;
+        }
+        
+    }
+
+    public void SecondCup()
+    {
+        gameObject.GetComponent<MeshFilter>().mesh = secondCupMesh;
+        lid.GetComponent<MeshFilter>().mesh = secondCupLidMesh;
+        sleeve.GetComponent<MeshFilter>().mesh = secondCupSleeveMesh;
+    }
+
+    public void ThirdCup()
+    {
+        gameObject.GetComponent<MeshFilter>().mesh = thirdCupMesh;
+        lid.GetComponent<MeshFilter>().mesh = thirdCupLidMesh;
+        sleeve.GetComponent<MeshFilter>().mesh = thirdCupSleeveMesh;
+    }
+
+
+
+    
+
+
 }

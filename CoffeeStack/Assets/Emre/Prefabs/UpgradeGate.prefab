@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8745706255902508904
+--- !u!1 &6211830489150866797
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3365064278886894798}
-  - component: {fileID: 8346467666097603915}
-  - component: {fileID: 6443629205511600064}
-  - component: {fileID: 3871587053388421704}
-  - component: {fileID: -5448303511022630202}
-  - component: {fileID: 351715051558610057}
+  - component: {fileID: 1486558670066270532}
+  - component: {fileID: 828872680669736831}
+  - component: {fileID: 2409101611211306414}
+  - component: {fileID: 5397160238417259792}
+  - component: {fileID: 7046274180054221786}
   m_Layer: 0
-  m_Name: Cup
+  m_Name: UpgradeGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3365064278886894798
+--- !u!4 &1486558670066270532
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745706255902508904}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.46, z: 0.7}
+  m_GameObject: {fileID: 6211830489150866797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.75, y: 1.5, z: 0}
+  m_LocalScale: {x: 2.5, y: 2, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8346467666097603915
+--- !u!33 &828872680669736831
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745706255902508904}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6443629205511600064
+  m_GameObject: {fileID: 6211830489150866797}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2409101611211306414
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745706255902508904}
+  m_GameObject: {fileID: 6211830489150866797}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c61f3417df8f0884280695b0bbb52d11, type: 2}
+  - {fileID: 2100000, guid: fc6e58e0ae05f4441b79abb8de63ba4b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,56 +83,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3871587053388421704
-CapsuleCollider:
+--- !u!65 &5397160238417259792
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745706255902508904}
+  m_GameObject: {fileID: 6211830489150866797}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &-5448303511022630202
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7046274180054221786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745706255902508904}
+  m_GameObject: {fileID: 6211830489150866797}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 327d14db1c9a67841932c3698e4bff8d, type: 3}
+  m_Script: {fileID: 11500000, guid: c0ba3ed11b9e9ab4eb3bcf22b202658c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lid: {fileID: 0}
-  sleeve: {fileID: 0}
-  secondCupMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  secondCupLidMesh: {fileID: 0}
-  secondCupSleeveMesh: {fileID: 0}
-  thirdCupMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  thirdCupLidMesh: {fileID: 0}
-  thirdCupSleeveMesh: {fileID: 0}
-  isCollcet: 0
-  cupControl: {fileID: 0}
-  cupType: 0
---- !u!54 &351715051558610057
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745706255902508904}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
