@@ -46,6 +46,13 @@ public class Cup : MonoBehaviour
             cup.isCollcet = true;
             cup.gameObject.transform.parent = gameObject.transform;
             cupControl.cupList.Add(cup);
+            for (int i = 0; i < cup.transform.childCount; i++)
+            {
+                if (cup.transform.childCount > 0) 
+                {
+                    cupControl.dynamicBone.m_Exclusions.Add(cup.transform.GetChild(i));
+                }
+            }
             cupControl.DynamicBonePos();
         }
 
@@ -60,8 +67,21 @@ public class Cup : MonoBehaviour
 
         if (gate)
         {
-            ChangeCup();
-            isChanged = false;
+            if (gate.gateType == GateType.UpgradeGate) 
+            {
+                ChangeCup();
+                isChanged = false;
+            }
+
+            if (gate.gateType == GateType.LidGate) 
+            {
+                lid.SetActive(true);
+            }
+            if (gate.gateType == GateType.SleeveGate) 
+            {
+                sleeve.SetActive(true);
+            }
+            
         }
     }
 
