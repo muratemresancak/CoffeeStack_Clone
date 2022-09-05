@@ -3901,11 +3901,11 @@ PrefabInstance:
     - target: {fileID: -5448303511022630202, guid: eb17b03607bdfc645b0889befd3465ab, type: 3}
       propertyPath: thirdCupLidMesh
       value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: -5448303511022630202, guid: eb17b03607bdfc645b0889befd3465ab, type: 3}
       propertyPath: secondCupSleeveMesh
       value: 
-      objectReference: {fileID: -946853745336240800, guid: 016195d58c8b2f1428f3823cfa22fdc2, type: 3}
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 3365064278886894798, guid: eb17b03607bdfc645b0889befd3465ab, type: 3}
       propertyPath: m_RootOrder
       value: 0
