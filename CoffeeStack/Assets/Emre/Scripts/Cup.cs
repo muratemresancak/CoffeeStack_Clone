@@ -56,11 +56,11 @@ public class Cup : MonoBehaviour
             cupControl.DynamicBonePos();
         }
 
-        if (obstacle&&!obstacle.isTaked)
+        if (obstacle&&!obstacle.isTaken)
         {
             cupControl.cupList.Remove(this);
             gameObject.transform.parent = obstacle.gameObject.transform;
-            obstacle.isTaked = true;
+            obstacle.isTaken = true;
             StartCoroutine(obstacle.TakeCoffee());
             cupControl.DynamicBonePos();
         }
@@ -72,7 +72,6 @@ public class Cup : MonoBehaviour
                 ChangeCup();
                 isChanged = false;
             }
-
             if (gate.gateType == GateType.LidGate) 
             {
                 lid.SetActive(true);
@@ -94,7 +93,6 @@ public class Cup : MonoBehaviour
             SecondCup();
             gameObject.GetComponent<MeshRenderer>().material.color=Color.blue;
         }
-        
 
         if (this.cupType == CupType.SecondCup && !isChanged)
         {

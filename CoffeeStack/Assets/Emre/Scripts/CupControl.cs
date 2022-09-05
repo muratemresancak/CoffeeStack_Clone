@@ -32,16 +32,5 @@ public class CupControl : MonoBehaviour
 
             dynamicBone.SetupParticles();
         }
-
-        // for (int i = 0; i < cupList.Count; i++)
-        // {
-        //     for (int j = 0; j < cupList[i].gameObject.transform.childCount; j++)
-        //     {
-        //         if (cupList[i].gameObject.transform.childCount > 0) 
-        //         {
-        //             dynamicBone.m_Exclusions.Add(cupList[i].gameObject.transform.GetChild(j));
-        //         }
-        //     }
-        // }
     }
 }
