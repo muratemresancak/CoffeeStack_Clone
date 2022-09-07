@@ -21,7 +21,7 @@ public class CupControl : MonoBehaviour
             if (i == 0)
             {
                 dynamicBone.m_Root = cupList[i].gameObject.transform;
-                cupList[i].transform.localPosition = Vector3.zero;
+                cupList[i].transform.localPosition = new Vector3(0, 0.25f, 0);
             }
             else
             {
